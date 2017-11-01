@@ -1,19 +1,27 @@
 package ds_n_algo.algorithm.sorting.selection;
 
 /**
- * Created by PouRit on 30-10-2017.
+ * Created by PouRit on 01-11-2017.
  */
 public class SelectionSortLoopApproach {
 
     public static int[] doSelectionSorting(int[] arr) {
 
-        for (int i = 1; i <= arr.length; i++) {
+        OutterLoop:/*It maintains regular element (n) traversal of array*/
+        for (int i = 0; i < arr.length; i++) {
+            /* 'min_index' is alocation which hold minim element of unsorted arraay
+            *  It's starts assuming ith loction's element is minimum
+            * */
+            int min_index=i;
 
-            for (int j = i - 1; j > 0; j--) {
-                if (arr[j] < arr[j - 1]) {
-                    int temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = temp;
+            InnerLoop:/*It maintains Unsorted Array Traversal*/
+            for (int j = i+1; j < arr.length; j++) {
+
+               SelectMinimumElement:/*try to find minimum element of 'unsorted' array and put min_index location*/
+                if (arr[j] < arr[min_index]) {
+                    int temp_minimum=arr[j];
+                    arr[j]=arr[min_index];
+                    arr[min_index]=temp_minimum;
                 }
             }
         }
@@ -27,7 +35,5 @@ public class SelectionSortLoopApproach {
         for (int i : outPut) {
             System.out.print(i + ",");
         }
-
     }
-
 }
