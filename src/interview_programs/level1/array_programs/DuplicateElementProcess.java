@@ -1,4 +1,4 @@
-package interview_programs.level1.duplicateEliment;
+package interview_programs.level1.array_programs;
 
 /**
  * Created by PouRit on 29-10-2017.
