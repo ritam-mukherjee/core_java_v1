@@ -11,10 +11,11 @@ public class BinarySearchTreeProgram1 {
         root_node.insert(80);
         root_node.insert(100);
 
-        System.out.println("Inorder");
+        System.out.println("\nInorder");
         root_node.printInorder();
-
-        System.out.println("Preorder");
+        System.out.println("\nPreorder");
         root_node.printPreorder();
+        System.out.println("\nPostorder");
+        root_node.printPostorder();
     }
 }
