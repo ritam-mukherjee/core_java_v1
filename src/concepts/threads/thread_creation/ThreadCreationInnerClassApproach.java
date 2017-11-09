@@ -1,4 +1,4 @@
-package concepts.Thread.thread_creation;
+package concepts.threads.thread_creation;
 
 /**
  * Created by PouRit on 09-11-2017.

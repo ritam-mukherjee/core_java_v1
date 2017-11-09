@@ -1,4 +1,4 @@
-package concepts.Thread.thread_creation;
+package concepts.threads.thread_creation;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
