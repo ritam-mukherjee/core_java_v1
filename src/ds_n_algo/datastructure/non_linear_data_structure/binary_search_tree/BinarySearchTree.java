@@ -116,6 +116,7 @@ public class BinarySearchTree {
         root_node.insert(80);
         root_node.insert(100);
 
+        System.out.println("\n----------Printing :display-----------");
         System.out.println("\nInorder");
         root_node.printInorder();
         System.out.println("\nPreorder");

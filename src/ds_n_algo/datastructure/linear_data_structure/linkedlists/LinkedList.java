@@ -1,4 +1,5 @@
 package ds_n_algo.datastructure.linear_data_structure.linkedlists;
+
 /**
  * Created by Ritam Mukherjee on 01-11-2017.
  * Source   :   HackerRank
@@ -20,7 +21,6 @@ class Node {
     }
 
 }
-
 
 public class LinkedList {
 
@@ -59,7 +59,7 @@ public class LinkedList {
         head = newHead;
     }
 
-    public void deleteWithvalue(int data) {
+    public void deleteWithValue(int data) {
         /* Situation 1: when List is empty, i.e. head is null*/
         if (head == null)
             return;
@@ -81,28 +81,130 @@ public class LinkedList {
         }
     }
 
+    public int getLength() {
+        int length = 0;
+        Node current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
+        }
+        return length;
+    }
+
     public void display() {
         Node current = head;
-        while (current.next != null) {
+        while (current != null) {
             System.out.print("|   " + current.data + "    |--->");
             current = current.next; //current node now pointing last element
         }
-        System.out.print("|   " + current.data + "    |\n");
+        System.out.println("\n-------------------------------------------------------");
+        //  System.out.print("|   " + current.data + "    |\n");
+    }
+
+
+    public void insertAtPosition(int data, int position) {
+        Node element = new Node(data);
+        empty_list:
+        if (head == null) {
+            head = element;
+            return;
+        }
+
+        invalid_position:
+        if (position > getLength() + 1 || position < 1)
+            System.out.println("invalid position");
+
+        valid_position:
+        /*Scenario 1: when element will insert at first*/
+        if (position == 1) {
+            element.next = head;
+            head = element;
+        } else {
+         /* "previous" represt where the element should inserted
+            "current" at present which node is exist that location   */
+
+            Node previous = head;//start considering first location
+            int count = 1;
+            while (count < position - 1) {
+                previous = previous.next;
+                count++;
+            }
+            Node current = previous.next;
+            element.next = current;  /*new "element" pointing current node*/
+            previous.next = element; /*previous now pointing "element"*/
+
+        }
+
+    }
+
+    public void deleteAtPosition(int position) {
+
+        empty_list:
+        if (head == null) {
+            System.out.println("underflow");
+        }
+
+        invalid_position:
+        if (position > getLength() + 1 || position < 1)
+            System.out.println("invalid position");
+
+        valid_position:
+        /*Scenario 1: when element will insert at first*/
+        if (position == 1) {
+            head = head.next;
+        } else {
+
+           /* "previous" represt where the element should inserted
+            "current" at present which node is exist that location   */
+
+         /* "previous" represt where the element should inserted
+            "current" at present which node is exist that location   */
+
+            Node previous = head;//start considering first location
+            int count = 1;
+            while (previous != null) {
+                if (count == position - 1) {
+                    previous.next = previous.next.next;
+              /*      Node current=previous.next;
+                    previous.next=current.next;*/
+                }
+                previous = previous.next;
+                count++;
+            }
+
+        }
+
     }
 
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
 
+
+        linkedList.insertAtPosition(44, 1);
+        linkedList.display();
         linkedList.append(11);
         linkedList.append(22);
         linkedList.append(33);
         linkedList.display();
+        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
 
         linkedList.prepend(00);
         linkedList.display();
+        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
 
-        linkedList.deleteWithvalue(22);
+        linkedList.deleteWithValue(22);
         linkedList.display();
+        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
+
+
+        linkedList.insertAtPosition(99, 3);
+        linkedList.display();
+        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
+
+
+        linkedList.deleteAtPosition(2);
+        linkedList.display();
+        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
     }
 }
