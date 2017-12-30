@@ -40,7 +40,7 @@ public class Queue {
         /*create a node with provided data*/
         Node node=new Node(data);
 
-        /*if tail not null then tell will point new Node and new Node will consider as "tail"*/
+        /*if tail not null then tail will point new Node and new Node will consider as "tail"*/
         if(tail!=null){
             tail.next=node;
         }

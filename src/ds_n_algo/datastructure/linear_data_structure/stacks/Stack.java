@@ -12,7 +12,6 @@ public class Stack {
         }
     }
 
-
     private Node top;
 
     /*Method 1 #  isEmpty() ->If head is null return true else return false*/
@@ -44,12 +43,9 @@ public class Stack {
             int data=top.data;
         /* the next element is now consider as top element*/
             top=top.next;
-
             return  data;
-
     }
 
-    
     public void display(){
         while(top!=null){
 
