@@ -1,4 +1,4 @@
-package ds_n_algo.datastructure.linear_data_structure.linkedlists;
+package ds_n_algo.datastructure.linear_data_structure.linkedlists.single_linkedlist;
 
 /**
  * Created by Ritam Mukherjee on 01-11-2017.
@@ -97,7 +97,9 @@ public class LinkedList {
             System.out.print("|   " + current.data + "    |--->");
             current = current.next; //current node now pointing last element
         }
-        System.out.println("\n-------------------------------------------------------");
+        System.out.print("[NULL]");
+        System.out.print("\t\t  [SIZE :"+getLength()+"]");
+        System.out.println("\n---------------------------------------------------------------------------------------");
         //  System.out.print("|   " + current.data + "    |\n");
     }
 
@@ -154,21 +156,18 @@ public class LinkedList {
             head = head.next;
         } else {
 
-           /* "previous" represt where the element should inserted
+         /* "before" represt where the element should inserted
             "current" at present which node is exist that location   */
 
-         /* "previous" represt where the element should inserted
-            "current" at present which node is exist that location   */
-
-            Node previous = head;//start considering first location
+            Node before = head;//start considering first location
             int count = 1;
-            while (previous != null) {
+            while (before != null) {
                 if (count == position - 1) {
-                    previous.next = previous.next.next;
+                    before.next = before.next.next;
               /*      Node current=previous.next;
                     previous.next=current.next;*/
                 }
-                previous = previous.next;
+                before = before.next;
                 count++;
             }
 
@@ -187,24 +186,18 @@ public class LinkedList {
         linkedList.append(22);
         linkedList.append(33);
         linkedList.display();
-        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
 
         linkedList.prepend(00);
         linkedList.display();
-        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
 
         linkedList.deleteWithValue(22);
         linkedList.display();
-        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
-
 
         linkedList.insertAtPosition(99, 3);
         linkedList.display();
-        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
-
 
         linkedList.deleteAtPosition(2);
         linkedList.display();
-        System.out.println("\t\tsize" + linkedList.getLength() + "\t\t");
+
     }
 }
