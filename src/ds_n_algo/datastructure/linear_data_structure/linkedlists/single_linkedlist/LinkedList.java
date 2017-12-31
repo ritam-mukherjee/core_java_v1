@@ -27,6 +27,30 @@ public class LinkedList {
     /* All queue should having one starting Node called "Head" "*/
     private Node head; //each time traversal should start from head
 
+    /*Utility Method  1# getLength() -> print size of the List*/
+    public int getLength() {
+        int length = 0;
+        Node current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
+        }
+        return length;
+    }
+    /*Utility Method  2# display() -> print all elements of the list*/
+    public void display() {
+        Node current = head;
+        while (current != null) {
+            System.out.print("|   " + current.data + "    |--->");
+            current = current.next; //current node now pointing last element
+        }
+        System.out.print("[NULL]");
+        System.out.print("\t\t  [SIZE :"+getLength()+"]");
+        System.out.println("\n---------------------------------------------------------------------------------------");
+        //  System.out.print("|   " + current.data + "    |\n");
+    }
+
+
     /*Method a # append(data)    -> add element to the end of the List*/
     public void append(int data) {
 
@@ -79,28 +103,6 @@ public class LinkedList {
             }
             current = current.next; //current node now pointing last element
         }
-    }
-
-    public int getLength() {
-        int length = 0;
-        Node current = head;
-        while (current != null) {
-            length++;
-            current = current.next;
-        }
-        return length;
-    }
-
-    public void display() {
-        Node current = head;
-        while (current != null) {
-            System.out.print("|   " + current.data + "    |--->");
-            current = current.next; //current node now pointing last element
-        }
-        System.out.print("[NULL]");
-        System.out.print("\t\t  [SIZE :"+getLength()+"]");
-        System.out.println("\n---------------------------------------------------------------------------------------");
-        //  System.out.print("|   " + current.data + "    |\n");
     }
 
 
