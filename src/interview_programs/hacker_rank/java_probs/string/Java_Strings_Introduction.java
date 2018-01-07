@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class JavaStringsIntroduction {
+public class Java_Strings_Introduction {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
