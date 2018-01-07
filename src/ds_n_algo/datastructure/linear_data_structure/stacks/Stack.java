@@ -22,7 +22,7 @@ public class Stack {
             return Boolean.FALSE;
     }
 
-    /*Method 2# peek() -> If que is not empty return head data*/
+    /*Method 2# peek() -> If queue is not empty return head data*/
     public int peek(){
         return top.data;
     }
