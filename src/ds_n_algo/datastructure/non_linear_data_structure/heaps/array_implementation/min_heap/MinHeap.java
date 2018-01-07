@@ -3,6 +3,8 @@ package ds_n_algo.datastructure.non_linear_data_structure.heaps.array_implementa
 import java.util.Arrays;
 import java.util.function.Consumer;
 
+
+
 public class MinHeap {
 
     private int capacity=10;//initial capacity of heap is 10
@@ -106,20 +108,20 @@ public class MinHeap {
         while(hasLeftChild(index)){
 
             /*consider that item's left child is holding smaller element'*/
-            int smallerChilldIndex=getLeftChildIndex(index);
+            int smallerChildIndex=getLeftChildIndex(index);
 
             /*if it has rightChild and right child's element is smaller than left child,
             right child's element will consider as smaller element*/
             if(hasRightChild(index) && rightChild(index)<leftChild(index))
-                smallerChilldIndex=getRightChildIndex(index);
+                smallerChildIndex=getRightChildIndex(index);
 
-            if(items[index]<items[smallerChilldIndex])
+            if(items[index]<items[smallerChildIndex])
                 break;
             else
-                swap(index,smallerChilldIndex);
+                swap(index,smallerChildIndex);
 
 
-            index=smallerChilldIndex;
+            index=smallerChildIndex;
         }
     }
 
@@ -133,15 +135,15 @@ public class MinHeap {
 
         arrayConsumer.accept(heap.items);
         heap.add(1);
-        System.out.println("\nAfter add------------");
+        System.out.println("\nAfter Add------------");
         arrayConsumer.accept(heap.items);
 
         heap.add(3);
-        System.out.println("\nAfter add------------");
+        System.out.println("\nAfter Add------------");
         arrayConsumer.accept(heap.items);
 
         heap.pool();
-        System.out.println("\nAfter pool------------");
+        System.out.println("\nAfter Pool------------");
         arrayConsumer.accept(heap.items);
     }
 }
