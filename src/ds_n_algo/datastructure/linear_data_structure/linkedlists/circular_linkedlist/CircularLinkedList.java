@@ -173,6 +173,27 @@ public class CircularLinkedList {
         head=head.next;
     }
 
+   public boolean  hasCycle() {
+        boolean flag = false;
+        if (head == null)
+            return false;
+
+        Node fast = head.next.next;
+        Node slow = head.next;
+        while_loop:
+        while (fast != null && slow != null && fast.next != null) {
+            if (fast == slow)
+                flag = true;
+
+            if(fast ==head  && slow==head)
+                break while_loop;
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return flag;
+    }
+
+
     public static void main(String[] args) {
         CircularLinkedList circularLinkedList=new CircularLinkedList();
 
@@ -193,14 +214,16 @@ public class CircularLinkedList {
         circularLinkedList.prepend(00);
         circularLinkedList.display();
 
-        circularLinkedList.delete_first();
+/*        circularLinkedList.delete_first();
         circularLinkedList.display();
 
         circularLinkedList.delete_first();
         circularLinkedList.display();
 
         circularLinkedList.delete_last();
-        circularLinkedList.display();
+        circularLinkedList.display();*/
+
+        System.out.println(circularLinkedList.hasCycle());
 
     }
 

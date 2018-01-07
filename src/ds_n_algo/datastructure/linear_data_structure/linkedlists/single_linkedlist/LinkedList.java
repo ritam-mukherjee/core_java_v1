@@ -105,6 +105,32 @@ public class LinkedList {
         }
     }
 
+/**
+
+ Insert At Particular Position
+------------------------------
+        1. Three pointer mainly used
+            A. 	ELEMENT  -> The node which is going to insert
+            B. 	PREVIOUS -> The location where is going to insert
+            C 	CURRENT -> the node which is presently processing,
+2. List is Empty?
+            [ HEAD ==NULL] then HEAD= CURRENT;
+3. Invalid Position?
+    POSITION >= '0' && POSITION<= length -1   => "Invalid Position"
+ 4. Valid Position?
+    A. Is Inserttion and the First Location?
+        POSITION == 1? - YES
+        ELEMENT.NEXT=HEAD;
+        HEAD=ELEMENT;
+    B. Is position more than 1?
+         I. 	PREVIOUS point to 'HEAD' location & count start from'1' position.
+        II.     traverse : HEAD --> 'Position -1'  < while (count < position - 1)>
+        III.    reach destination?
+                CURRENT <- PREVIOUS.NEXT;  	 --assigning
+                PREVIOUS.NEXT= ELEMENT;		 --cutting
+                ELEMENT.NEXT=CURRENT; 		 --joining
+
+*/
 
     public void insertAtPosition(int data, int position) {
         Node element = new Node(data);
@@ -133,7 +159,7 @@ public class LinkedList {
                 previous = previous.next;
                 count++;
             }
-            Node current = previous.next;
+            Node current = previous.next;//<CUTTING>
             element.next = current;  /*new "element" pointing current node*/
             previous.next = element; /*previous now pointing "element"*/
 
