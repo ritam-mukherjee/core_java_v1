@@ -25,7 +25,7 @@ public class Java_2D_Array {
         };
         Consumer<Integer> printConsumer=System.out::println;
         Function<Integer[][],Integer> getBigSum=array -> {
-            int max_sum=Integer.MIN_VALUE;
+            int max_sum=Integer.MIN_VALUE; // intialize with 0 create problem if all values are negetive
             for (int i = 0; i < (array.length - 2); i++) {
                 for (int j = 0; j < (array[i].length - 2); j++) {
                     /*Hour glass sum calculation*/
