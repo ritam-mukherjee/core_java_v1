@@ -1,4 +1,4 @@
-package concepts.operators.collection;
+package concepts.collection;
 
 import java.util.Collections;
 import java.util.HashMap;
