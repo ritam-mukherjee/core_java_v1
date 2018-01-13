@@ -3,6 +3,10 @@ package interview_programs.hacker_rank.java_probs.data_structure;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+/**
+ * Source   :   HackerRank
+ * Url      :   https://www.hackerrank.com/challenges/java-2d-array/problem
+ */
 public class Java_2D_Array {
     public static void main(String[] args) {
         Integer[][] arr=new Integer[][]{
@@ -41,5 +45,10 @@ public class Java_2D_Array {
         };
 
         printConsumer.accept(getBigSum.apply(array2));
+
+        int f=1, i=2;
+        while(++i<5)
+            f*=i;
+        System.out.println(f);
     }
 }
