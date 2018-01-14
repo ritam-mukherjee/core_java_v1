@@ -6,7 +6,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * https://www.hackerrank.com/challenges/java-loops-i/problem
+     * Source   :   HackerRsnk
+     * Link     :   https://www.hackerrank.com/challenges/java-loops-i/problem
  */
 public class Java_Loop_I {
     public static void main(String[] args) {
