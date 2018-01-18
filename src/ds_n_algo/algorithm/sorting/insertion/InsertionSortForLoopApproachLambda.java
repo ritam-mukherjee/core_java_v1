@@ -3,7 +3,30 @@ package ds_n_algo.algorithm.sorting.insertion;
 import java.util.function.Consumer;
 
 /**
- * Created by PouRit on 30-10-2017.
+ * INSERTION SORT
+ ----------------
+ Sorts each item of the array as they encountered.
+
+ Traverse : left to right.
+         1. Use single pass.
+         2. each item's left side is sorted and right side is unsorted.
+         3. After completion of each traversal The current item is "inserted" into currect place of sorted section.
+
+ Algorithm:
+     1. One loop pointing 1st element , traverse from 0 th location to nth location.
+     2. another loop pointing j, passing from (i-1) to 0 th locaton[Sorted Area] and swap shortest one;
+
+ Advantage	: 	No additional space is needed, when memory space is sort
+ Disadvantage:	Not appropriate for large unsorted data
+
+ Performance	:
+ 1. Time complexity:
+         Best Case	: 	O(n)  [ very good for best case, efficient when data is small and nearly sorted]
+         Avg Case 	:	O(n^2)
+         Worst Case 	: 	O(n^2)
+
+ 2. Space COmplexity:	O(n)
+        It also operates directly from input array.
  */
 
 interface iInsertionSort {
