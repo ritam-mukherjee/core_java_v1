@@ -1,16 +1,16 @@
 package ds_n_algo.datastructure.linear_data_structure.linkedlists.single_linkedlist;
 
 /**
- * Created by Ritam Mukherjee on 01-11-2017.
- * Source   :   HackerRank
- * Link     :   https://www.youtube.com/watch?v=njTh_OwMljA
+ * @author      :Ritam Mukherjee on 01-11-2017.
+ * @version     :HackerRank
+ * @see         : https://www.youtube.com/watch?v=njTh_OwMljA
  */
 
 /*The "Node" class represent each element of a LinkedList*/
 class Node {
 
     /*the class having two property:
-        a. data-> wheich represent the containing value of the element
+        a. data-> which represent the containing value of the element
         b. next-> reference of next element.*/
     int data;
     Node next;
@@ -24,10 +24,11 @@ class Node {
 
 public class LinkedList {
 
-    /* All queue should having one starting Node called "Head" "*/
+    /* All LinkedList should having one starting Node called "Head" "*/
     private Node head; //each time traversal should start from head
 
     /*Utility Method  1# getLength() -> print size of the List*/
+    /**Point to HEAD node, traverse each node and increment counter till encounter a "null" reference*/
     public int getLength() {
         int length = 0;
         Node current = head;
@@ -51,7 +52,20 @@ public class LinkedList {
     }
 
 
-    /*Method a # append(data)    -> add element to the end of the List*/
+    /*Method 1 # append(data)    -> add element to the end of the List*/
+
+    /**
+     * Insert At End
+     --------------
+     1. Mainly one Pointer is used:
+     A. CURRENT -> the node which is presently processing
+     2. List is Empty?
+                [ HEAD ==NULL] then HEAD= CURRENT;
+     3. Elements are present?
+     Start from HEAD node reach till the particular node which pointing to NULL node	[ while CURRNT.NEXT=NULL ]
+     4.got last element?
+                If it got element then CURRENT.NEXT will point to new NODE;
+     */
     public void append(int data) {
 
         /* Situation 1: when List is empty, i.e. head is null*/
@@ -109,26 +123,26 @@ public class LinkedList {
 
  Insert At Particular Position
 ------------------------------
-        1. Three pointer mainly used
+        1. Three pointers mainly used
             A. 	ELEMENT  -> The node which is going to insert
             B. 	PREVIOUS -> The location where is going to insert
             C 	CURRENT -> the node which is presently processing,
-2. List is Empty?
-            [ HEAD ==NULL] then HEAD= CURRENT;
-3. Invalid Position?
-    POSITION >= '0' && POSITION<= length -1   => "Invalid Position"
- 4. Valid Position?
-    A. Is Inserttion and the First Location?
-        POSITION == 1? - YES
-        ELEMENT.NEXT=HEAD;
-        HEAD=ELEMENT;
-    B. Is position more than 1?
-         I. 	PREVIOUS point to 'HEAD' location & count start from'1' position.
-        II.     traverse : HEAD --> 'Position -1'  < while (count < position - 1)>
-        III.    reach destination?
-                CURRENT <- PREVIOUS.NEXT;  	 --assigning
-                PREVIOUS.NEXT= ELEMENT;		 --cutting
-                ELEMENT.NEXT=CURRENT; 		 --joining
+        2. List is Empty?
+                    [ HEAD ==NULL] then HEAD= CURRENT;
+        3. Invalid Position?
+            POSITION >= '0' && POSITION<= length -1   => "Invalid Position"
+        4. Valid Position?
+            A. Is Inserttion and the First Location?
+                POSITION == 1? - YES
+                ELEMENT.NEXT=HEAD;
+                HEAD=ELEMENT;
+            B. Is position more than 1?
+                 I. 	PREVIOUS point to 'HEAD' location & count start from'1' position.
+                II.     traverse : HEAD --> 'Position -1'  < while (count < position - 1)>
+                III.    reach destination?
+                        CURRENT <- PREVIOUS.NEXT;  	 --assigning
+                        PREVIOUS.NEXT= ELEMENT;		 --cutting
+                        ELEMENT.NEXT=CURRENT; 		 --joining
 
 */
 
@@ -166,6 +180,25 @@ public class LinkedList {
         }
 
     }
+/**
+Delete At Particular Postion
+------------------------------
+        1. Mainly two pointers needed:
+            PREVIOUS -> The location where is going to insert
+            CURRENT -> the node which is presently processing,
+        2. Is th list Empty?
+            [LIST==NULL] --'underflow'
+        3. Invalid Position?
+            POSITION >= '0' && POSITION<= length -1   => "Invalid Position"
+        4. Valid Position?
+            A. Is Inserttion and the First Location?
+                    POSITION == 1? - YES
+                    HEAD=HEAD.NEXT
+            B. Is position more than 1?
+                    I. 	PREVIOUS point to 'HEAD' location & count start from'1' position.
+                    II. Traverse : HEAD --> 'Position -1'  < while (count < position - 1)>
+                    III. Assignment	: PREVIOUS.NEXT= PREVIOUS.NEXT.NEXT
+    */
 
     public void deleteAtPosition(int position) {
 
@@ -184,18 +217,18 @@ public class LinkedList {
             head = head.next;
         } else {
 
-         /* "before" represt where the element should inserted
+         /* "previous" represt where the element should inserted
             "current" at present which node is exist that location   */
 
-            Node before = head;//start considering first location
+            Node previous = head;//start considering first location
             int count = 1;
-            while (before != null) {
+            while (previous != null) {
                 if (count == position - 1) {
-                    before.next = before.next.next;
+                    previous.next = previous.next.next;
               /*      Node current=previous.next;
                     previous.next=current.next;*/
                 }
-                before = before.next;
+                previous = previous.next;
                 count++;
             }
 
