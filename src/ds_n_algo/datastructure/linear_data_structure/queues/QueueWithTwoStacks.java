@@ -5,8 +5,8 @@ import java.util.Stack;
 
 /**
 Here two stacks are maintained
-        1. Firstone keep all newes elements
-        2. Second  one keeps all mnewse elements,
+        1. First one keep all new elements
+        2. Second  one keeps all removed elements,
 One helper method is there which shift elements from oldest to newest when stack oldest is empty
 
  */
