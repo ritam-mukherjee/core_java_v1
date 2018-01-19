@@ -12,8 +12,10 @@ public class QuickSortImplementation {
         if(left>=right)
             return;
 
+        /*PIVOT: A special element based on which other elements re-arrange their position quickly*/
         int pivot=arr[(left+right)/2];
 
+       /* INDEX: based on which ARRAY is devided into LEFT and RIGHT part.*/
         int index=partition(arr,left,right,pivot);
 
         quickSort(arr,left,index-1);
@@ -22,14 +24,15 @@ public class QuickSortImplementation {
 
     public static int partition(int[] array,int left, int right,int pivot){
 
+            traverse_till_left_meet_right:
              while (left<=right)   {
 
-                 left_to_pivot_traversal: //left->right
+                 find_left_bigger_than_pivot: //left->right
                  while(array[left]<pivot) {
                      left++;
                  }
 
-                 right_to_pivot_traversal:  //right->left move
+                 find_right_smaller_than_pivot://right->left move
                  while(array[right]>pivot) {
                      right--;
                  }
@@ -45,7 +48,7 @@ public class QuickSortImplementation {
 
              }
 
-        return left; //left element as partion
+        return left; //left element as INDEX
     }
 
     public static void main(String[] args) {
@@ -61,3 +64,54 @@ public class QuickSortImplementation {
 
     }
 }
+
+/**
+
+ QUICK SORT
+ -----------
+ Mechanism:
+ 1. Principal	:	Divide and Conquers of sorting
+ 2. It selects a pivot value from array either  a fixed rule or statistics.
+ ( nor right or wrong choice to choose, only better choice).
+ 3. Put all value less than pivot position's value to left and more to right.
+ 4. Based on pivot partitioning happen and its self partitioning further.
+ 5. The process Repeat until sorted.
+
+ Algorithm:
+ 1. This algorithm always consider two special elements:
+ A.PIVOT: A special element based on which other elements re-arrange their position quickly;
+ B.INDEX: based on which ARRAY is devided into LEFT and RIGHT part.
+ 2.Mainly two methods involve to do sorting:
+ A. quickSort() : one recursive sort method ,responsible to quickly re arrange
+ elements comparing PIVOT position's elements value.
+ B. partition() : this method is responsible to find out proper position of INDEX.
+ 3.  quickSort();
+ A. Identify middle element; [MIDDLE= LEFT +RIGHT /2]
+ B. call partition() method to find out location of INDEX.
+ C. call quickSort() method passing starting element as LEFT and INDEX element as right;
+ [ quickSort(ARRAY,LEFT,INDEX) ]
+ D. call quickSort() method as next to INDEX element as LEFT, & nth  element as RIGHT.
+ [ quickSort(ARRAY,INDEX+1,RIGHT) ]
+
+ 4. partition()
+ A. stat traversal LEFT-> RIGHT considering 0th element as LEFT and nth element as RIGHT.
+ B. Continue traversal till it reach LEFT<=RIGHT.  [WHILE(LEFT<=RIGHT)]
+ C. while LEFT element is less than PIVOT just shift 1 place forward.
+ WHILE[LEFT<PIVOT] { [LEFT++]};
+ D. While RIGHT element is more than PIVOT elemet shift right element 1 place backward.
+ WHILE (RIGHT>PIVOT>{ [RIGHT--] };
+ E. encounter two sides when LEFT element is bigger than PIVOT and RIGHT is smaller than PIVOT.
+ F. Do swapping among LEFT  and RIGHT and continue progression.
+ If[LEFT>PIVOT]{ [SWAP; LEFT++, RIGHT--]  }
+ J. while LEFT and RIGHT elemnts meet consider that position and return that location as INDEX;
+ Return{[LEFT];
+
+ Performance:
+ 1. Time complexity:
+ best case	:   O(nlog n)
+ avg case 	:	O(nlogn)
+ worst Case	:   O(n^2)
+
+ 2. space complexity O(n)
+ As recursive algorithm so stack space must be considered.
+ */

@@ -22,6 +22,7 @@ public class MergeSortRecursionApproach {
         mergeSort(arr, temp, leftStart, mid);
         mergeSort(arr, temp, mid + 1, rightEnd);
         mergeHalves(arr, temp, leftStart, rightEnd);
+
     }
 
     public static void mergeHalves(int[] arr, int[] temp, int leftStart, int rightEnd) {
@@ -83,3 +84,60 @@ public class MergeSortRecursionApproach {
 
     }
 }
+
+
+
+
+/**
+ *
+ MERGE SORT
+ ----------
+ Mechanism:
+ 1. Principal	:	Devide and Conquire
+ 2. The array is recursively split into two halves.
+ 3. When array is in group of 1, it is reconstructed in sort order.
+ 4. Each reconstructed array is merged with other halvs.
+
+
+ Algorithm:
+ 1. Mainly two methods involve to do sorting:
+ A. mergeSort() : one recursive sort method ,responsible to split the array
+ into two halves, consider as LEFT_ARRAY and RIGHT_ARRAY, and do shopping;
+ B. mergeHalves() : one merge method call before each recursive call to merge sorted halves;
+ 2. mergeSort() method :
+ A. Identify middle element;
+ B. call mergeSort() method passing starting element as LEFT and middle element as RIGHT,
+ C. call mergeSort() method as next to middle element as LEFT, & nth  element as RIGHT.
+ D. call mergeHalves() method;
+ 3. mergeHalves():
+ A. It got two arrays and consider both are sorted;
+ B. Find out Middle element;
+ C. consider LEFT element as starting fo LEFT_START and middle as LEFT_END,
+ D. Consider MIDDLE as RIGHT_START and last nth element as RIGHT_END;
+ E. starting point of TEMP array is LEFT_START element of LEFT_ARRAY.
+ F. traverse both simultaneously and compare same location's element in both array;
+ G. Whichever sorted put that into TEMP array. increase the INDEX.
+ H. There may be a situation comes when either LEFT_ARRAY or RIGHT_ARRAY traversal complete.
+ I. traverse individually LEFT_ARRAY and RIGHT_ARRAY and put elements in TEMP.
+ J. Along with Combind LEFT_ARRAY and RIGHT_ARRAY traversal, only LEFT_ARRAY or RIGHT_ARRAY
+ traversal possible but not both simultaneously.
+
+
+ Property	:
+ 1. Appropriate for Large data set.
+ 2. Data spitting that means algorithm can be made parallal.
+ 3. Performance is good but fixed.
+
+ 1. Time complexity:
+ worst case/best case/ Worst Case:	O(nlogn)
+ 2. Space Complexity	->	O(n)
+
+
+ Advantage:
+ Predictable and depndable alogorithm.
+
+ Disadvantage:
+ A. Merge can be done but it is often not performed "in-place", One additional array is needed.
+ B. The extra allocation increase the meory footprint required to sort data
+
+ */

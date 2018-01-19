@@ -36,3 +36,31 @@ public class BubbleSortForLoopAproach {
 
     }
 }
+
+/**
+ * BUBBLE SORT
+ ------------
+ Simplest Sorting Algorithm
+
+ Mechanism	:
+
+ Traverse: Left -> right
+
+ 1. On each Iteration
+ a. an element with it immediate right neighbor.
+ b. If right neighbor is smaller then swap right and left.
+ c. process repeat with remaining array items.
+
+ 2. On each iteration largest unsorted element is sorted and goes to right most side.
+
+
+ Performance	:
+ 1. Time complexity:
+ Best Case	: 	O(n)  [ very good for best case, efficient when data is small and nearly sorted]
+ Avg Case 	:	O(n^2)
+ worst case 	: 	O(n^2)  [ Not appropriate for large unsorted data sets]
+
+ 2. Space COmplexity:	O(n)
+ Operates directly on Input array
+
+ */
