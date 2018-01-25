@@ -12,7 +12,7 @@ class LongWrapper {
         }
     }
 }
-public class ClasicRaceResolver {
+public class Thread_Clasic_Race_Resolver {
 
     public static void main(String[] args) throws InterruptedException {
 

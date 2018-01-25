@@ -14,7 +14,7 @@ class LongWrapper {
     public long getValue() {return l; }  //getter
     public void increment_value(){l=l+1; } //incrementor
 }
-public class ClassicRaceCondition {
+public class Thread_Classic_Race_Condition {
 
     public static void main(String[] args) throws InterruptedException {
 
