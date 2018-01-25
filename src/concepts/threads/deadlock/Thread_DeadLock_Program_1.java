@@ -1,44 +1,48 @@
 package concepts.threads.deadlock;
 
+import java.util.function.BiConsumer;
+
 /**
- * Created by ritmukherjee on 12/4/2016.
+ * source PluralSight
  */
+class DeadLock{
+
+    private Object key1=new Object();
+    private Object key2=new Object();
+
+    public void A(){
+        synchronized (key1){
+            System.out.println("I am in "+ Thread.currentThread().getName()+" at A() method");
+            B();
+        }
+    }
+    public void B(){
+        synchronized (key2){
+            System.out.println("I am in "+ Thread.currentThread().getName()+" at B() method");
+            C();
+        }
+    }
+    public void C(){
+        synchronized (key1){
+            System.out.println("I am in "+ Thread.currentThread().getName()+" at C() method");
+        }
+    }
+}
 public class Thread_DeadLock_Program_1 {
 
-    public static void main(String[] args) {
-        String str1="JAVA";
-        String str2="DOTNET";
-        Thread t1=new Thread(()->
-        {
-            synchronized (str1){
-                synchronized (str2){
-                    str1.concat(str2);
-                    System.out.println(str1.concat(str2));
-                }
-            }
-        });
-        Thread t2=new Thread(()->
-        {
-            synchronized (str1){
-                synchronized (str2){
-                    str1.concat(str2);
-                    System.out.println(str2.concat(str1));
-                }
-            }
-        });
+    public static void main(String[] args) throws InterruptedException {
+            DeadLock deadLock=new DeadLock();
+            Runnable runnableA=() -> deadLock.A();
+            Runnable runnableB=() -> deadLock.B();
 
+            Thread threadA=new Thread(runnableA);
+            threadA.start();
 
-        System.out.println("----------------------start-----------------------");
-        t1.start();
-        t2.start();
+            Thread threadB=new Thread(runnableB);
+            threadB.start();
 
+            threadA.join();
+            threadB.join();
 
-        try {
-            t1.join();
-            t2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("-------------------end------------------------");
     }
 }
