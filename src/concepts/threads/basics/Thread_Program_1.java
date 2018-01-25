@@ -1,7 +1,9 @@
 package concepts.threads.basics;
 
 import java.util.function.BiConsumer;
-
+/**
+source  :   udemy
+ */
 public class Thread_Program_1 {
     public static void main(String[] args) {
         BiConsumer<String,String> print=(color, name) ->
