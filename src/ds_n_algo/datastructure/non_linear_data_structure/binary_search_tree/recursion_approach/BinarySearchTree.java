@@ -1,4 +1,4 @@
-package ds_n_algo.datastructure.non_linear_data_structure.binary_search_tree;
+package ds_n_algo.datastructure.non_linear_data_structure.binary_search_tree.recursion_approach;
 
 /**
  * Created by Ritam Mukherjee on 01-11-2017.
@@ -6,7 +6,7 @@ package ds_n_algo.datastructure.non_linear_data_structure.binary_search_tree;
  * Link     :   https://www.youtube.com/watch?v=oSWTXtMglKE&t=2s
  */
 
-/*BinnaryTree:
+/*BinaryTree:
 Each node having no more than two child nodes
 */
 class Node {
@@ -21,7 +21,7 @@ class Node {
         this.data = data;
     }
 
-   /* Method 1# insert(data) -> inseart a value*/
+   /* Method 1# insert(data) -> insert a value*/
     public void insert(int value) {
 
         value_less_or_equal_data:
@@ -40,7 +40,7 @@ class Node {
         }
     }
 
-    /* Method 2# contains(data) -> inseart a value*/
+    /* Method 2# contains(data) -> insert a value*/
     public boolean contains(int value){
 
         value_matches_data:
@@ -70,10 +70,11 @@ class Node {
                 return right.contains(value); /*recursion: call right nodes contain method*/
         }
         else
-            return Boolean.FALSE; //All other scenerio which hardly needed
+            return Boolean.FALSE; //All other scenario which hardly needed
     }
 
     /* display methods */
+    /*INORDER ->  LEFT-ROOT-RIGHT*/
     public void printInorder() {
         left:
         if (left != null)
@@ -85,6 +86,7 @@ class Node {
             right.printInorder();
     }
 
+    /*PREORDER ->  ROOT-LEFT-RIGHT*/
     public void printPreorder() {
         root:
         System.out.print(data + ",");
@@ -96,13 +98,14 @@ class Node {
             right.printPreorder();
     }
 
+    /*POSTORDER ->  LEFT-RIGHT-ROOT*/
     public void printPostorder() {
-        right:
-        if (right != null)
-            right.printPreorder();
         left:
         if (left != null)
             left.printPreorder();
+        right:
+        if (right != null)
+            right.printPreorder();
         root:
         System.out.print(data + ",");
     }
