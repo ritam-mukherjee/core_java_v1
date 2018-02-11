@@ -2,7 +2,7 @@ package ds_n_algo.datastructure.linear_data_structure.stacks.array_implementatio
 
 public class Stack_Array<X> {
     private X[] data;
-    public int head=-1;
+    public int head=0;
 
     public Stack_Array(int size) {
         data = (X[])new Object[size];
@@ -12,7 +12,7 @@ public class Stack_Array<X> {
     }
     public void push(X item){
 
-        data[++head]=item;
+        data[head++]=item;
     }
 
     public X pop(){
@@ -20,9 +20,8 @@ public class Stack_Array<X> {
         if(head==0)
             throw new IllegalStateException("UnderFlow");
 
-        X item=data[head];
+        X item=data[--head];
         data[head]=null;
-        head--;
         return item;
     }
 
