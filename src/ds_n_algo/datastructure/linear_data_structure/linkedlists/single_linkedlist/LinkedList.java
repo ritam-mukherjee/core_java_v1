@@ -24,7 +24,7 @@ class Node {
 
 public class LinkedList {
 
-    /* All LinkedList should having one starting Node called "Head" "*/
+    /* All LinkedList should having one producer_consumer Node called "Head" "*/
     private Node head; //each time traversal should start from head
 
     /*Utility Method  1# getLength() -> print size of the List*/
@@ -87,7 +87,7 @@ public class LinkedList {
 
     }
 
-    /*Method 2 # prepend(data)    -> add element to the starting of the List*/
+    /*Method 2 # prepend(data)    -> add element to the producer_consumer of the List*/
     public void prepend(int data) {
         /*New head element will be created*/
         Node newHead = new Node(data);

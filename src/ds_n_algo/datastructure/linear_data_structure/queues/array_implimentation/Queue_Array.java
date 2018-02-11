@@ -100,18 +100,18 @@ public class Queue_Array<X> {
     }
 
     public static void main(String[] args) {
-        Queue_Array<Integer> array=new Queue_Array<>();
-        array.enQueue(11);
-        array.enQueue(22);
-        array.enQueue(33);
-        array.enQueue(44);
-        array.enQueue(55);
-        array.display();
-        array.deQueue();
-        array.deQueue();
-        array.display();
-        System.out.println(array.contains(55));
-        System.out.println(array.access(2));
+        Queue_Array<Integer> queue=new Queue_Array<>();
+        queue.enQueue(11);
+        queue.enQueue(22);
+        queue.enQueue(33);
+        queue.enQueue(44);
+        queue.enQueue(55);
+        queue.display();
+        queue.deQueue();
+        queue.deQueue();
+        queue.display();
+        System.out.println(queue.contains(55));
+        System.out.println(queue.access(2));
 
 
 

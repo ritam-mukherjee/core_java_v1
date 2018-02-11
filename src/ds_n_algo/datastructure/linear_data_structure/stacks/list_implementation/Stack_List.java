@@ -1,6 +1,6 @@
-package ds_n_algo.datastructure.linear_data_structure.stacks;
+package ds_n_algo.datastructure.linear_data_structure.stacks.list_implementation;
 
-public class Stack {
+public class Stack_List {
     /*The Queue class should have a static node field*/
     private static class Node{
         /*The node should have one data field and reference of another node field*/
@@ -56,7 +56,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack stack= new Stack();
+        Stack_List stack= new Stack_List();
         stack.push(11);
         stack.push(22);
         stack.push(33);

@@ -19,7 +19,7 @@ class Node {
 
 
 public class CircularLinkedList {
-    /* All queue should having one starting Node called "Head" "*/
+    /* All queue should having one producer_consumer Node called "Head" "*/
     private Node head; //each time traversal should start from head
 
     /*Utility Method  1# getLength() -> print size of the List*/
