@@ -1,6 +1,6 @@
-package ds_n_algo.datastructure.linear_data_structure.queues;
+package ds_n_algo.datastructure.linear_data_structure.queues.list_implementation;
 
-public class Queue {
+public class Queue_List {
 
     /*The Queue class should have a static node field*/
     private static class Node{
@@ -13,7 +13,7 @@ public class Queue {
         }
     }
 
-   /* All que should having one starting Node called "Head" and one ending node called "Tail"*/
+   /* All que should having one producer_consumer Node called "Head" and one ending node called "Tail"*/
     private Node head; //value should be remove from head
     private Node tail; //value should be added at tail
 
@@ -78,7 +78,7 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-        Queue queue=new Queue();
+        Queue_List queue=new Queue_List();
         queue.add(11);
         queue.add(22);
         queue.add(33);
