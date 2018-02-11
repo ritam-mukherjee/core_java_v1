@@ -1,4 +1,4 @@
-package ds_n_algo.datastructure.linear_data_structure.queues;
+package ds_n_algo.datastructure.linear_data_structure.queues.two_stack_implementation;
 
 import java.util.Stack;
 
