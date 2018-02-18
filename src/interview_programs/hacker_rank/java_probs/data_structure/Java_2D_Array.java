@@ -66,4 +66,3 @@ public class Java_2D_Array {
         while(++i<5)
             f*=i;
         System.out.println(f);*/
-        */
