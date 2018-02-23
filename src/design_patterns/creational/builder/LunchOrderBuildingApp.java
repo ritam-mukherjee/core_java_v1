@@ -7,9 +7,9 @@ public class LunchOrderBuildingApp {
 
         LunchOrder lunchOrder=builder.buid();
         System.out.println(lunchOrder.getBread());
-        System.out.println(lunchOrder.getBread());
-        System.out.println(lunchOrder.getBread());
-        System.out.println(lunchOrder.getBread());
+        System.out.println(lunchOrder.getCondiments());
+        System.out.println(lunchOrder.getDressing());
+        System.out.println(lunchOrder.getMeat());
     }
 
 
