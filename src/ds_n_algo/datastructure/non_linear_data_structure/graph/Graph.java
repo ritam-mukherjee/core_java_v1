@@ -112,5 +112,7 @@ public class Graph {
                 "(starting from vertex 2)");
 
         g.BFS(2);
+
+        System.out.println("\n----------------------------------------");
     }
 }
