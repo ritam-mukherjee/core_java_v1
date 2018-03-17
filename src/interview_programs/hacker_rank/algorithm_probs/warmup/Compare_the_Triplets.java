@@ -5,8 +5,6 @@ package interview_programs.hacker_rank.algorithm_probs.warmup;
  * link :   https://www.hackerrank.com/challenges/compare-the-triplets/problem
  */
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
