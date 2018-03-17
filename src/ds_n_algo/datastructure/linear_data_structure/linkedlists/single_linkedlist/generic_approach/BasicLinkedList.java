@@ -57,7 +57,7 @@ public class BasicLinkedList<X> {
         }
         else{
            /* otherwise
-                1. the newly instatiated node consider as new last node;
+                1. the newly instantiated node consider as new last node;
                 2. Grab the old LAST NODE and point that to new last node;
                 3. The new last node now onwards treat as LAST*/
             Node newLastNode=new Node(item);
@@ -83,8 +83,8 @@ public class BasicLinkedList<X> {
 
     public void insert(X item,int position){
 
-        /*if the poistion of insertion greater than size then the position consider as INVALID position*/
-        if(size()<position)
+        /*if the position of insertion greater than size then the position consider as INVALID position*/
+        if(position<0 || size()<position)
             throw new IllegalArgumentException("Invalid position");
 
          /*A temporary Node  is created "CURRENT NODE" which point to the first node*/
@@ -121,7 +121,7 @@ public class BasicLinkedList<X> {
             nodeItem = remove();
         }
         else {
-         /*Two temporary Node  is created "CURRENT NODE" and "PREVIOUS NODE"which point to the first node*/
+         /*Two temporary Node[POINTER]  is created "CURRENT NODE" and "PREVIOUS NODE"which point to the first node*/
             Node previousNode = first;
             Node currentNode = first;
 
