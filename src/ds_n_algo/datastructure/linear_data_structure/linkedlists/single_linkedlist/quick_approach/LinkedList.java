@@ -1,4 +1,4 @@
-package ds_n_algo.datastructure.linear_data_structure.linkedlists.single_linkedlist;
+package ds_n_algo.datastructure.linear_data_structure.linkedlists.single_linkedlist.quick_approach;
 
 /**
  * @author      :Ritam Mukherjee on 01-11-2017.
