@@ -139,3 +139,26 @@ printLevelorder(tree)
 		    c) Dequeue a node from q and assign it’s value to temp_node
 
 Time Complexity: O(n) where n is number of nodes in the binary tree
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+							VERTICAL ORDER TRAVERSAL
+--------------------------------------------------------------------------------------------------------------------
+ The efficient solution based on hash map is discussed. 
+
+ HD[Horizontal Distance ]
+	 1. We need to check the Horizontal Distances from root for all nodes. 
+	 2. If two nodes have the same Horizontal Distance (HD), then they are on same vertical line. 
+	 HD for root is 0, a right edge (edge connecting to right subtree) is considered as +1 horizontal distance and a left edge is considered as -1 horizontal distance. 
+	
+We can do preorder traversal of the given Binary Tree. While traversing the tree, we can recursively calculate HDs. 
+We initially pass the horizontal distance as 0 for root. 
+			For left subtree, we pass the Horizontal Distance as Horizontal distance of root minus 1. 
+			For right subtree, we pass the Horizontal Distance as Horizontal Distance of root plus 1. 
+			For every HD value, we maintain a list of nodes in a hasp map. Whenever we see a node in traversal, 
+we go to the hash map/ tree map entry and add the node to the hash map using HD;
+key 	:	HD as a key in map.
+value 	:	AA vector or List which contains all nodes having same HD value.
+
+The Ideology is All nodes having same HD value consider as they falls in same vertical line.
