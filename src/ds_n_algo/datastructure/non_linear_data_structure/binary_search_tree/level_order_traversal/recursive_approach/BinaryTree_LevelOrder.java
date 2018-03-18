@@ -7,6 +7,46 @@ import java.util.Queue;
 Source  :   GeekForGeek
 Link    :   https://www.geeksforgeeks.org/level-order-tree-traversal/
  */
+/*
+METHOD 1 (Use function to print a given level)
+
+        Algorithm:
+        There are basically two functions in this method.
+        1. printGivenLevel	:	First One is to print all nodes at a given level;
+        2. printLevelorder	:	The other is to print level order traversal of the tree .
+        printLevelorder makes use of printGivenLevel to print nodes at all levels one by one starting from root.
+
+        Another utility function is needed to determine height of the tree;
+        3. height(root)		:  this method is used by printlevelorder() to determine how many levels it has to print
+
+        Function to print level order traversal of tree
+        ------------------------------------------------
+                    printLevelorder(tree)
+                    for d = 1 to height(tree)
+                    printGivenLevel(tree, d);
+
+        Function to print all nodes at a given level
+        ---------------------------------------------
+                    printGivenLevel(tree, level)
+                    if tree is NULL then return;
+                    if level is 1, then
+                    print(tree->data);
+                    else if level greater than 1, then
+                    printGivenLevel(tree->left, level-1);
+                    printGivenLevel(tree->right, level-1);
+
+		Function(utility) to print all nodes at a given level
+		-----------------------------------------------------
+                    height(tree)
+                    if root is NULL then return;
+                    if root has left or right child increase height by 1
+                    whichever bigger among left and right height return that
+
+
+        Time Complexity:
+         O(n^2) in worst case. For a skewed tree, printGivenLevel() takes O(n) time where n is the number of nodes in the skewed tree.
+        So time complexity of printLevelOrder() is O(n) + O(n-1) + O(n-2) + .. + O(1) which is O(n^2).
+*/
 class Node {
     /*each node having a data*/
     int data;
