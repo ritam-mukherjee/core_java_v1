@@ -88,7 +88,7 @@ public class QuickSortImplementation {
  3.  quickSort();
  A. Identify middle element; [MIDDLE= LEFT +RIGHT /2]
  B. call partition() method to find out location of INDEX.
- C. call quickSort() method passing starting element as LEFT and INDEX element as right;
+ C. call quickSort() method passing producer_consumer element as LEFT and INDEX element as right;
  [ quickSort(ARRAY,LEFT,INDEX) ]
  D. call quickSort() method as next to INDEX element as LEFT, & nth  element as RIGHT.
  [ quickSort(ARRAY,INDEX+1,RIGHT) ]

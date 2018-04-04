@@ -106,15 +106,15 @@ public class MergeSortRecursionApproach {
  B. mergeHalves() : one merge method call before each recursive call to merge sorted halves;
  2. mergeSort() method :
  A. Identify middle element;
- B. call mergeSort() method passing starting element as LEFT and middle element as RIGHT,
+ B. call mergeSort() method passing producer_consumer element as LEFT and middle element as RIGHT,
  C. call mergeSort() method as next to middle element as LEFT, & nth  element as RIGHT.
  D. call mergeHalves() method;
  3. mergeHalves():
  A. It got two arrays and consider both are sorted;
  B. Find out Middle element;
- C. consider LEFT element as starting fo LEFT_START and middle as LEFT_END,
+ C. consider LEFT element as producer_consumer fo LEFT_START and middle as LEFT_END,
  D. Consider MIDDLE as RIGHT_START and last nth element as RIGHT_END;
- E. starting point of TEMP array is LEFT_START element of LEFT_ARRAY.
+ E. producer_consumer point of TEMP array is LEFT_START element of LEFT_ARRAY.
  F. traverse both simultaneously and compare same location's element in both array;
  G. Whichever sorted put that into TEMP array. increase the INDEX.
  H. There may be a situation comes when either LEFT_ARRAY or RIGHT_ARRAY traversal complete.
