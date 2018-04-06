@@ -1,8 +1,6 @@
 package ds_n_algo.datastructure.linear_data_structure.linkedlists.doubly_linkedlist;
 
 
-import ds_n_algo.datastructure.linear_data_structure.linkedlists.single_linkedlist.LinkedList;
-
 /*The "Node" class represent each element of a LinkedList*/
 class Node {
 
