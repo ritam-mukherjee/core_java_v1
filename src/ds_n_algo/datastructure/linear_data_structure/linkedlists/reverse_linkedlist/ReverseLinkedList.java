@@ -25,10 +25,10 @@ class LinkedList{
         Node next=null;
 
         while (current!=null){
-            next=current.next;
-            current.next=prev;
-            prev=current;
-            current=next;
+            next=current.next; /*NEXT variable holding the current element's next element*/
+            current.next=prev; /* Direction change */
+            prev=current;  /*Movement of CURRENT pointer*/
+            current=next; /*shift for while loop processing*/
         }
         node=prev; /*because prev at last holding current object reference*/
         return node;
