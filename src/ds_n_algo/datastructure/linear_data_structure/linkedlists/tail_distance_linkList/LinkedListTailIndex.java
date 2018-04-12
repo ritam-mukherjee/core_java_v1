@@ -3,8 +3,11 @@ package ds_n_algo.datastructure.linear_data_structure.linkedlists.tail_distance_
 import java.util.Scanner;
 
 /**
+ *
  * Source       :   HackerRank
  * Link         :   https://www.hackerrank.com/challenges/get-the-value-of-the-node-at-a-specific-position-from-the-tail/problem
+ *
+ * The problem also can resolve by reversing the linked list and through backward traverse.
  */
 class Node {
 
