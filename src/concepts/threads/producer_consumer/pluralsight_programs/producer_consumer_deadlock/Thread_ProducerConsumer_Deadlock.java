@@ -1,4 +1,4 @@
-package concepts.threads.producer_consumer.classic_producer_consumer_example.producer_consumer_deadlock;
+package concepts.threads.producer_consumer.pluralsight_programs.producer_consumer_deadlock;
 
 /**
  * Source       :   PluralSight
