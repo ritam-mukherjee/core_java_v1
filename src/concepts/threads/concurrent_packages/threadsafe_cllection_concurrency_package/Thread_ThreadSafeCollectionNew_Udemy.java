@@ -1,16 +1,15 @@
-package concepts.threads.concurrent_packages.threadsafe_collection;
+package concepts.threads.concurrent_packages.threadsafe_cllection_concurrency_package;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
-
-public class Thread_ThreadSafeCollection_Udenmy {
+public class Thread_ThreadSafeCollectionNew_Udemy {
     public static final String EOF = "EOF";
 
     public static void main(String[] args) {
-        List<String> buffer = new ArrayList<String>();
+        List<String> buffer = new CopyOnWriteArrayList<>();
         MyProducer producer = new MyProducer(buffer, ThreadColor.ANSI_YELLOW);
         MyConsumer consumer1 = new MyConsumer(buffer, ThreadColor.ANSI_PURPLE);
         MyConsumer consumer2 = new MyConsumer(buffer, ThreadColor.ANSI_CYAN);
@@ -69,7 +68,7 @@ class MyConsumer implements Runnable {
                 if(buffer.isEmpty()) {
                     continue;
                 }
-                if(buffer.get(0).equals(Thread_ThreadSafeCollection_Udenmy.EOF)) {
+                if(buffer.get(0).equals(Thread_ThreadSafeCollectionNew_Udemy.EOF)) {
                     System.out.println(color + "Exiting");
                     break;
                 } else {
