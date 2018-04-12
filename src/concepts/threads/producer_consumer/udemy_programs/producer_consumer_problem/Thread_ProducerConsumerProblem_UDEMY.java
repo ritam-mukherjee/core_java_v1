@@ -87,7 +87,7 @@ class Reader implements Runnable {
     }
 }
 
-public class ProducerConsumerProblem {
+public class Thread_ProducerConsumerProblem_UDEMY {
     public static void main(String[] args) {
         Message message = new Message();
         (new Thread(new Writer(message))).start();
