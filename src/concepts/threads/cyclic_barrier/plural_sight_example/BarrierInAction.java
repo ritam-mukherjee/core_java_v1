@@ -34,7 +34,7 @@ public class BarrierInAction {
 
 
         ExecutorService service= Executors.newFixedThreadPool(4);
-        /*In cyclicBariier if there is a count of 4, atleast 4 thread needed in block to release barrier
+        /*In cyclicBariier if there is a count of 4, at least 4 thread needed in block to release barrier
         * In this program: if the count of Thread we reduce less than 4, barrier will not open, if we don't metion waiting time
         * */
         CyclicBarrier barrier=new CyclicBarrier(4,() -> System.out.println("barrier Opening..."));
