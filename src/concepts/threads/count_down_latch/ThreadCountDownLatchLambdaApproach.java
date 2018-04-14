@@ -33,11 +33,6 @@ public class ThreadCountDownLatchLambdaApproach {
         };
 
 
-        BiFunction<Runnable,String,Runnable> runner=(runnable1, s) -> {
-            Thread t=new Thread(runnable,s);
-            return t;
-        };
-
 
         ExecutorService service=Executors.newFixedThreadPool(1);
         for (int i = 1; i <= 3; i++) {
@@ -48,6 +43,6 @@ public class ThreadCountDownLatchLambdaApproach {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("<><><><><><><><>complete<><><><><><><><>");
+        System.out.println("<><><><><><><><><>complete<><><><><><><><><>");
     }
 }
