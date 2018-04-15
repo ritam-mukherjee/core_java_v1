@@ -1,5 +1,9 @@
 package concepts.threads.even_odd_problem.boolean_variablle_approach;
 
+/**
+ *
+ * Source   :   https://java2blog.com/print-even-odd-numbers-threads-java/
+ */
 public class Thread_EvenOddNumber_Printer_Normal {
     boolean odd;
     int count = 1;
@@ -8,11 +12,11 @@ public class Thread_EvenOddNumber_Printer_Normal {
     public void printOdd() {
         synchronized (this) {
             while (count < MAX) {
-                System.out.println(ThreadColor.ANSI_YELLOW+"Checking odd loop");
+                System.out.println(ThreadColor.ANSI_PURPLE+"Checking odd loop");
 
                 while (!odd) {
                     try {
-                        System.out.println(ThreadColor.ANSI_YELLOW+"Odd waiting : " + count);
+                        System.out.println(ThreadColor.ANSI_PURPLE+"Odd waiting : " + count);
                         wait();
                         System.out.println("Notified odd :" + count);
                     } catch (InterruptedException e) {
@@ -20,7 +24,7 @@ public class Thread_EvenOddNumber_Printer_Normal {
                         e.printStackTrace();
                     }
                 }
-                System.out.println(ThreadColor.ANSI_YELLOW+"Odd Thread :" + count);
+                System.out.println(ThreadColor.ANSI_PURPLE+"Odd Thread :" + count);
                 count++;
                 odd = false;
                 notify();

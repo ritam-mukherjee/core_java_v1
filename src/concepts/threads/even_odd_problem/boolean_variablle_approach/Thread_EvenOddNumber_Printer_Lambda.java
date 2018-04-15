@@ -10,24 +10,24 @@ public class Thread_EvenOddNumber_Printer_Lambda {
 
     public Object lock=new Object();
     Thread odd_thread=new Thread(() -> {
-        synchronized (this){
+        synchronized (lock){
             while (count < MAX) {
-                System.out.println(ThreadColor.ANSI_YELLOW+"Checking odd loop");
+                System.out.println(ThreadColor.ANSI_PURPLE+"Checking odd loop");
 
                 while (!odd) {
                     try {
-                        System.out.println(ThreadColor.ANSI_YELLOW+"Odd waiting : " + count);
-                        wait();
+                        System.out.println(ThreadColor.ANSI_PURPLE+"Odd waiting : " + count);
+                        lock.wait();
                         System.out.println("Notified odd :" + count);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
-                System.out.println(ThreadColor.ANSI_YELLOW+"Odd Thread :" + count);
+                System.out.println(ThreadColor.ANSI_PURPLE+"Odd Thread :" + count);
                 count++;
                 odd = false;
-                notify();
+                lock.notify();
             }
         }
     },"Odd Thread");
@@ -38,14 +38,14 @@ public class Thread_EvenOddNumber_Printer_Lambda {
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
-        synchronized (this) {
+        synchronized (lock) {
             while (count < MAX) {
                 System.out.println(ThreadColor.ANSI_CYAN+"Checking even loop");
 
                 while (odd) {
                     try {
                         System.out.println(ThreadColor.ANSI_CYAN+"Even waiting: " + count);
-                        wait();
+                        lock.wait();
                         System.out.println(ThreadColor.ANSI_CYAN+"Notified even:" + count);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -54,7 +54,7 @@ public class Thread_EvenOddNumber_Printer_Lambda {
                 System.out.println(ThreadColor.ANSI_CYAN+"Even thread :" + count);
                 count++;
                 odd = true;
-                notify();
+                lock.notify();
 
             }
         }
