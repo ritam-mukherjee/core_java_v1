@@ -1,4 +1,4 @@
-package concepts.threads.thread_creation;
+package concepts.threads.thread_creation.dfifferent_approaches;
 
 import java.util.function.BiConsumer;
 
