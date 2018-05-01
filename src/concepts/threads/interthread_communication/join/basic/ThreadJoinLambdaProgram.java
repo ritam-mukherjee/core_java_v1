@@ -1,4 +1,4 @@
-package concepts.threads.interthread_communication.join;
+package concepts.threads.interthread_communication.join.basic;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;

@@ -1,4 +1,4 @@
-package concepts.threads.interthread_communication.join;
+package concepts.threads.interthread_communication.join.basic;
 
 /**
  * Created by PouRit on 09-11-2017.
