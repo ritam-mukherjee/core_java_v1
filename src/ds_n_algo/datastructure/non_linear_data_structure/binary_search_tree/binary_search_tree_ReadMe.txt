@@ -82,6 +82,29 @@ class Node
     }
 }
 =====================================================================================================
+                            HEIGHT of a Tree
+-----------------------------------------------------------------------------------------------------
+
+  Compute the "height" of a tree -- the number of  nodes along the longest path from the root node
+    down to the farthest leaf node.
+
+
+    public int getHeight(Node root){
+        if(root==null)
+            return 0;
+        else{
+            int lheight=getHeight(root.left);
+            int rheight=getHeight(root.right);
+
+            if(lheight>rheight)
+                return lheight+1;
+            else
+                return rheight+1;
+        }
+    }
+---------------------------------------------------------------------------------------------------------
+
+
 
 
 ------------------------------------------------------------------------------------------------
@@ -159,6 +182,7 @@ We initially pass the horizontal distance as 0 for root.
 			For every HD value, we maintain a list of nodes in a hasp map. Whenever we see a node in traversal, 
 we go to the hash map/ tree map entry and add the node to the hash map using HD;
 key 	:	HD as a key in map.
-value 	:	AA vector or List which contains all nodes having same HD value.
+value 	:	A vector or List which contains all nodes having same HD value.
 
 The Ideology is All nodes having same HD value consider as they falls in same vertical line.
+
