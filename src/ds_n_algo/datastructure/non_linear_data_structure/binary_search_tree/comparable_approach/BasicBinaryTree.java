@@ -196,7 +196,8 @@ public class BasicBinaryTree<X extends Comparable<X>> {
             currentNode.getParent().setLeft(newNode);
     }
 
-    /*POSTORDER ->  LEFT-RIGHT-ROOT*/
+
+    /*INORDER->  LEFT-ROOT-RIGHT*/
     public void print_in_order(Node node) {
 
         if(node==null)
@@ -213,11 +214,46 @@ public class BasicBinaryTree<X extends Comparable<X>> {
             //node = node.getRight();
             print_in_order(node.getRight());
         }
-
-
     }
 
+    /*PREORDER->  ROOT-LEFT-RIGHT*/
+    public void print_pre_order(Node node) {
 
+        if(node==null)
+            return;
+        root:
+        System.out.print(node.getItem()+"<->");
+        left:
+        if ( node.getLeft()!= null) {
+            //node=node.getLeft();
+            print_in_order(node.getLeft());
+        }
+
+        right:
+        if ( node.getRight()!= null) {
+            //node = node.getRight();
+            print_in_order(node.getRight());
+        }
+    }
+
+    /*POSTORDER->  LEFT-RIGHT-ROOT*/
+    public void print_post_order(Node node) {
+
+        if(node==null)
+            return;
+        left:
+        if ( node.getLeft()!= null) {
+            //node=node.getLeft();
+            print_post_order(node.getLeft());
+        }
+        right:
+        if ( node.getRight()!= null) {
+            //node = node.getRight();
+            print_post_order(node.getRight());
+        }
+        root:
+        System.out.print(node.getItem()+"<->");
+    }
     public static void main(String[] args) {
         BasicBinaryTree<Integer> integer_tree=new BasicBinaryTree<>();
         integer_tree.add(22);
@@ -232,8 +268,12 @@ public class BasicBinaryTree<X extends Comparable<X>> {
         System.out.println(integer_tree.root);
         System.out.println("\n");
 
-
-
+        integer_tree.print_in_order(integer_tree.root);
+        System.out.println("\n");
+        integer_tree.print_pre_order(integer_tree.root);
+        System.out.println("\n");
+        integer_tree.print_post_order(integer_tree.root);
+        System.out.println("\n");
 
         BasicBinaryTree<String> string_tree=new BasicBinaryTree<>();
         string_tree.add("ritam");
