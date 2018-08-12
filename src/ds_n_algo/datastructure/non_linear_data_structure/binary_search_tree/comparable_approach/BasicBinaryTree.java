@@ -66,7 +66,7 @@ public class BasicBinaryTree<X extends Comparable<X>> {
     }
 
 
-    /*constructor of Basic Binary Treee*/
+    /*constructor of Basic Binary Treee  */
 
     private Node root;
     private int size;
